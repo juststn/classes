@@ -1,4 +1,4 @@
-File Edit Options Buffers Tools C++ Help                                                                                #include <iostream>
+   #include <iostream>
 #include <string.h>
 #include <iomanip>
 #include <vector>
@@ -24,7 +24,8 @@ struct student2{
 };
 
 struct student3{
-  char firstname[50]; //initialize struct                                                                                 char lastname[50];
+  char firstname[50]; //initialize struct                                       
+  char lastname[50];
   int  id;
   float GPA;
 
