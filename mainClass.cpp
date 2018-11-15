@@ -190,9 +190,25 @@ void printMedia(vector<Media*>* mediaList) {
 //search for an entry by inputing a word that matches the title or year, then outputs information that matches it
 void searchMedia(vector<Media*>* mediaList) {
   string in;
+  string inTitle ="";
+  string inYear  ="";
+  
   cin.ignore();
-  cout<<"enter search value (title or year): ";
-  getline(cin,in);
+  cout << "search by title or year [enter 1 for title, 2 for year]? ";
+  getline(cin, in);
+
+  if (in == "1") {
+    cout << "enter title: ";
+    getline(cin, inTitle);
+  }
+
+  if (in == "2") {
+    cout << "enter year: ";
+    getline(cin, inYear);
+  }
+
+  //  cout<<"enter search value (title or year): ";
+  //  getline(cin,in);
   
   //iterate through vector
   string type;
@@ -202,7 +218,7 @@ void searchMedia(vector<Media*>* mediaList) {
     if (type=="MUSIC") {
       music* m = (music*)(*v);
 
-      if(m->getTitle() == in || m->getYear() == in){
+      if(m->getTitle() == inTitle || m->getYear() == inYear){
         cout<<"MUSIC: "<< m->getTitle() << ", " <<  m->getArtist() << ", " << m->getYear() << ", " << m->getDuration() << ", " << m->getPublisher()<<endl;
       }
     }
@@ -211,7 +227,7 @@ void searchMedia(vector<Media*>* mediaList) {
     if (type == "VIDEO") {
       video* a = (video*)(*v);
 
-      if(a->getTitle() == in || a->getYear() == in){
+      if(a->getTitle() == inTitle || a->getYear() == inYear){
 	cout<<"VIDEO: "<< a->getTitle() << ", "<< a->getPublisher() << ", " << a->getYear() << ", " << a->getRating()<<endl;
       }
     }
@@ -219,7 +235,7 @@ void searchMedia(vector<Media*>* mediaList) {
     if (type == "MOVIE") {
       movie* b = (movie*)(*v);
 
-      if(b->getTitle() == in || b->getYear() == in){
+      if(b->getTitle() == inTitle || b->getYear() == inYear){
 	cout<<"MOVIE: "<< b->getTitle() << ", " << b->getDirector() << ", " << b->getYear()<<", " << b->getDuration() <<", " << b->getRating()<<endl;
 
       }
