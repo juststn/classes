@@ -4,26 +4,36 @@
 
 using namespace std;
 
-movie::movie(char* newtitle, char* newdirector, char* newyear, char* newduration, char* newrating){
-  title = newtitle;
-  director = newdirector;
-  year = newyear;
-  duration = new duration;
-  rating = newrating;
+movie::movie()
+{
 }
 
-char movie::getTitle(){
-  return title;
+movie::~movie()
+{
 }
-char movie::getDirector(){
+
+void movie::setDirector(string newdirector)
+{
+  director = newdirector;
+}
+
+void movie::setDuration(string newduration)
+{
+  duration = newduration;
+}
+
+void movie::setRating(string newrating)
+{
+  rating =newrating;
+}
+
+string movie::getDirector(){
   return director;
 }
-char movie::getYear(){
-  return year;
-}
-char movie::getDuration(){
+
+string movie::getDuration(){
   return duration;
 }
-char movie::getRating(){
+string movie::getRating(){
   return rating;
 }

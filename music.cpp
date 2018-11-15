@@ -1,29 +1,39 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "music.h"
 
 using namespace std;
 
-music::music(char* newtitle, char* newartist, char* newyear, char* newduration, char* newpublisher){
-  title = newtitle;
-  artist = newartist;
-  year = newyear;
-  duration = new duration;
-  publisher = newpublisher;
+music::music()  {
+
 }
 
-char music::getTitle(){
-  return title;
+music::~music() {
 }
-char music::getArtist(){
+
+void music::setArtist(string newartist)
+{
+  artist = newartist ;
+}
+
+void music::setDuration(string newduration)
+{
+  duration = newduration;
+}
+
+void music::setPublisher(string newpublisher)
+{
+  publisher =newpublisher;
+}
+
+string music::getArtist(){
   return artist;
 }
-char music::getYear(){
-  return year;
-}
-char music::getDuration(){
+
+string music::getDuration(){
   return duration;
 }
-char music::getPublisher(){
+
+string music::getPublisher(){
   return publisher;
 }
